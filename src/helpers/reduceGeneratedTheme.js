@@ -37,6 +37,7 @@ const getSeed = theme => {
       return {
         hex,
         lab,
+        hsl: `hsl(${convert.hex.hsl(hex).join(', ')})`,
         count: counted[hex],
         colors: [],
         tokenColors: [],
