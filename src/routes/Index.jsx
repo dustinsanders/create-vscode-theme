@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import Forward from '@material-ui/icons/Forward'
 import PickColor from '../components/PickColor'
+import ToolBar from '../components/Toolbar'
 import ViewColor from '../components/ViewColor'
 import reduceGeneratedTheme from '../helpers/reduceGeneratedTheme'
 
@@ -33,13 +34,16 @@ const Index = () => {
 
   return (
     <Container className={classes.root}>
+      <Paper elevation={3} className={classes.toolbarContainer}>
+        <ToolBar />
+      </Paper>
       <Paper elevation={3}>
         {
           theme.map(color =>
             <div key={color.hex} className={classes.colorContainer}>
               <ViewColor {...color} />
               <Forward style={{ color: 'lightgrey' }} />
-              <PickColor {...color} />
+              <PickColor color={color} />
             </div>,
           )
         }

@@ -1,15 +1,29 @@
 import { ChromePicker } from 'react-color'
-import React, { useState } from 'react'
+import React from 'react'
+import { useStoreActions, useStoreState} from 'easy-peasy'
+import ChildColors from './ChildColors'
 
-const PickColor = ({ hex }) => {
-  const [color, setColor] = useState(hex)
+const PickColor = ({ color }) => {
+  const { hex } = color
+  const replacements = useStoreState(state => state.upload.replacements)
+  const value = replacements[hex] || hex
+  const setReplacement = useStoreActions(actions => actions.upload.setReplacement)
 
   return (
-    <ChromePicker
-      color={color}
-      onChange={newColor => setColor(newColor.hex)}
-      onChangeComplete={newColor => setColor(newColor.hex)}
-    />
+    <div>
+      <ChromePicker
+        disableAlpha
+        color={value}
+        onChange={newColor => setReplacement({
+          color,
+          newColor,
+        })}
+      />
+      <ChildColors
+        colors={color.children}
+        replacements={replacements}
+      />
+    </div>
   )
 }
 

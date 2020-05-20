@@ -8,6 +8,7 @@ import map from 'lodash/fp/map'
 import update from 'lodash/update'
 import convert from 'color-convert'
 import { getDeltaE00 } from 'delta-e'
+import colorcolor from 'colorcolor'
 
 const getSeed = theme => {
   const colorCodes = Object.values(theme.colors)
@@ -32,12 +33,14 @@ const getSeed = theme => {
     uniq,
     map(hex => {
       const [ L, A, B ] = convert.hex.lab.raw(hex)
+
+
       const lab = { L, A, B }
 
       return {
         hex,
         lab,
-        hsl: `hsl(${convert.hex.hsl(hex).join(', ')})`,
+        hsla: colorcolor(hex, 'hsla'),
         count: counted[hex],
         colors: [],
         tokenColors: [],
@@ -63,9 +66,14 @@ const createDeltaMatrix = seed => {
   return matrix
 }
 
-const threshold = 20
+const threshold = 17.5
 const sortByLikeColors = (seed, deltaMatrix) => {
+  let allChildren = []
   const reduction = seed.reduce((acc, color, idx) => {
+    if (allChildren.includes(color.hex)) {
+      return acc
+    }
+
     const sortedEntries = sortBy(
       Object.entries(deltaMatrix[color.hex]),
       ([_hex, delta]) => delta,
@@ -78,10 +86,14 @@ const sortByLikeColors = (seed, deltaMatrix) => {
       )
       .map(([nhex]) => seed.find(entry => entry.hex === nhex))
 
+    allChildren.push(...likeColors.map(entry => entry.hex))
+
     return [
       ...acc,
-      color,
-      ...likeColors,
+      {
+        ...color,
+        children: likeColors,
+      },
     ]
   }, [])
 
