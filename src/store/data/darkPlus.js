@@ -915,8 +915,7 @@ export default {
 		{
 			"scope": "token.debug-token",
 			"settings": {
-				// "foreground": "#B267E6"
-				"foreground": "#16825d"
+				"foreground": "#B267E6"
 			}
 		}
 	]
