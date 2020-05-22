@@ -33,8 +33,6 @@ const getSeed = theme => {
     uniq,
     map(hex => {
       const [ L, A, B ] = convert.hex.lab.raw(hex)
-
-
       const lab = { L, A, B }
 
       return {
@@ -116,8 +114,13 @@ const reduceGeneratedTheme = theme => {
     }
   })
 
-  const deltaMatrix = createDeltaMatrix(seed)
-  const final = sortByLikeColors(seed, deltaMatrix)
+  const filtered = seed.map(entry => ({
+    ...entry,
+    children: [],
+  })).filter(entry => entry.tokenColors.length)
+
+  const deltaMatrix = createDeltaMatrix(filtered)
+  const final = sortByLikeColors(filtered, deltaMatrix)
 
   return final
 }

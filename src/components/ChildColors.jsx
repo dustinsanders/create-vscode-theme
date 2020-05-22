@@ -11,11 +11,20 @@ const useStyles = makeStyles({
     width: 25,
     height: 25,
     borderRadius: '50%',
+    flexWrap: 'wrap',
   },
 })
 
+let let1 = 'test'
+var var1 = 'var'
+
+
 const ViewColor = ({ colors, replacements }) => {
   const classes = useStyles()
+
+  if (!colors) {
+    return null
+  }
 
   return (
     <div className={classes.root}>

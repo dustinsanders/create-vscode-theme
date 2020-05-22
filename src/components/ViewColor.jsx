@@ -6,7 +6,7 @@ import ChildColors from './ChildColors'
 
 const useStyles = makeStyles({
   color: {
-    height: 200,
+    minHeight: 200,
     width: 200,
     marginBottom: 8,
     color: 'white',
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   }
 })
 
-const ViewColor = ({ alpha, hex, hsla, count, children }) => {
+const ViewColor = ({ alpha, hex, hsla, count, children, tokenColors, ...rest }) => {
   const classes = useStyles()
 
   return (
@@ -29,13 +29,18 @@ const ViewColor = ({ alpha, hex, hsla, count, children }) => {
           backgroundColor: hex,
         }}
         elevation={5}
+        onClick={() => console.log(rest.flattenedScopes || rest.keys)}
       >
         <Typography>
           {hex} ({count})
           <br />
           {hsla}
           <br />
-          children ({children.length})
+          {/* {
+            tokenColors.map(tokenColor =>
+              <div>{tokenColor}</div>
+            )
+          } */}
         </Typography>
       </Paper>
       <ChildColors colors={children} />
