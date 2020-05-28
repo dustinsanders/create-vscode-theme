@@ -16,6 +16,7 @@ const getHueDifference = (oldHsla, newHsla) => {
   return oldHue - newHue
 }
 
+
 const getNewHue = (hue, hueDifference) => {
   const newHue = hue - hueDifference
 

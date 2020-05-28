@@ -1,5 +1,19 @@
 import { action } from 'easy-peasy'
 
+const darkPlus = {
+  purple: '#C586C0',
+  lightBlue: '#9CDCFE',
+  darkBlue: '#569CD6',
+  tan: '#DCDCAA',
+  brown: '#CE9178',
+  lightTeal: '#4EC9B0',
+  teal: '#51B6C4',
+  green: '#6A9955',
+
+  foreground: '#D4D4D4',
+  background: '#1E1E1E',
+}
+
 const homer = {
   yellow: '#FED90F',
   beige: '#D1B271',

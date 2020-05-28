@@ -55,7 +55,7 @@ const steps =[
 
 const Index = () => {
   const classes = useStyles()
-  const [activeStep, setActiveStep] = useState(2)
+  const [activeStep, setActiveStep] = useState(0)
   const { payload, replacements } = useStoreState(state => state.upload)
   const Content = steps[activeStep].component
 

@@ -71,7 +71,7 @@ const createDeltaMatrix = seed => {
   return matrix
 }
 
-const threshold = 3
+const threshold = 10
 const sortByLikeColors = (seed, deltaMatrix) => {
   let allChildren = []
   const reduction = seed.reduce((acc, color, idx) => {

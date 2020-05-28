@@ -18,6 +18,8 @@ const useStyles = makeStyles({
   }
 })
 
+new Date()
+
 const ViewColor = ({ alpha, hex, hsla, count, children, tokenColors, ...rest }) => {
   const classes = useStyles()
 
