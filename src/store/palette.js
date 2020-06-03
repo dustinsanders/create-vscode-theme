@@ -21,7 +21,7 @@ const homer = {
   // greenBlue: '#d981d8',
   greenBlue: '#cef296',
   // greenBlue: '#e65c09',
-  pink: '#E45DA2'
+  pink: '#FF419E',
 }
 
 // const homer = {
@@ -95,15 +95,18 @@ const colors = [
   {
     name: 'comment',
     hex: anOldHope.comment,
+    newHex: '#8D92A0',
+    description: 'Foreground color for commented out code and inactive tabs'
   },
   {
     name: 'secondary',
     hex: anOldHope.secondary,
+    newHex: '#494950',
   },
   {
     name: 'selection',
     hex: anOldHope.selection,
-    newHex: '#52525A',
+    newHex: '#494950',
   },
 ]
 
@@ -111,22 +114,32 @@ const secondary = [
   {
     name: 'Added',
     key: 'added',
+    hex: anOldHope.green,
+    newHex: homer.greenBlue,
   },
   {
     name: 'Deleted',
     key: 'deleted',
+    hex: anOldHope.red,
+    newHex: homer.pink,
   },
   {
     name: 'Modified',
     key: 'modified',
+    hex: anOldHope.orange,
+    newHex: homer.lightBlue,
   },
   {
     name: 'Error',
     key: 'error',
+    hex: anOldHope.red,
+    newHex: homer.pink,
   },
   {
     name: 'Warning',
     key: 'warning',
+    hex: anOldHope.green,
+    newHex: homer.beige,
   }
 ]
 
