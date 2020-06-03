@@ -1,6 +1,9 @@
 import get from 'lodash/get'
 import mapValues from 'lodash/mapValues'
 
+import getColors from './getColors'
+import getTokenColors from './getTokenColors'
+
 const makeGetHex = replacements =>
   hex => replacements[hex.toUpperCase()] || hex.toUpperCase()
 
@@ -30,8 +33,22 @@ const createTheme = (orginal, replacements) => {
   return newTheme
 }
 
-export const copyToClipboard = async (orginal, replacements) => {
-  const newTheme = createTheme(orginal, replacements)
+export const copyToClipboard = async palette => {
+  console.log('palette', palette)
+
+  const replacements = palette.colors.reduce((acc, curr) => ({
+    ...acc,
+    [curr.key || curr.name]: curr.newHex || curr.hex,
+  }), {})
+
+  console.log('replacements', replacements)
+
+  const colors = getColors(replacements)
+  const tokenColors = getTokenColors(replacements)
+  const newTheme = {
+    colors,
+    tokenColors,
+  }
 
   return navigator.clipboard.writeText(JSON.stringify(newTheme, null, 2))
 }

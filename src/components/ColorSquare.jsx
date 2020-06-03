@@ -4,10 +4,15 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   root: {
-    minHeight: 200,
+    height: 200,
     width: 200,
-    marginBottom: 8,
+    padding: 48,
+  },
+  color: {
+    height: '100%',
+    width: '100%',
     color: 'white',
+    borderRadius: 5,
     textShadow: '0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black',
     display: 'flex',
     flexDirection: 'column',
@@ -16,19 +21,32 @@ const useStyles = makeStyles({
   },
 })
 
-const ColorSquare = ({ children, hex, onClick }) => {
+const ColorSquare = ({
+  backgroundColor,
+  children,
+  hex,
+  onClick,
+}) => {
   const classes = useStyles()
 
   return (
     <Paper
       className={classes.root}
       style={{
-        backgroundColor: hex,
+        backgroundColor,
       }}
       elevation={5}
       onClick={onClick}
+      square
     >
-      {children}
+      <div
+        className={classes.color}
+        style={{
+          backgroundColor: hex,
+        }}
+      >
+        {children}
+      </div>
     </Paper>
   )
 }

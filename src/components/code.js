@@ -1,4 +1,5 @@
-import { action } from 'easy-peasy'
+export default
+`import { action } from 'easy-peasy'
 
 const darkPlus = {
   purple: '#C586C0',
@@ -18,19 +19,9 @@ const homer = {
   yellow: '#FED90F',
   beige: '#D1B271',
   lightBlue: '#70D1FE',
-  // greenBlue: '#d981d8',
-  greenBlue: '#cef296',
-  // greenBlue: '#e65c09',
+  greenBlue: '#424F46',
   pink: '#E45DA2'
 }
-
-// const homer = {
-//   yellow: '#a5d2ec',
-//   pink: '#b0d2b3',
-//   lightBlue: '#765b0e',
-//   beige: '#afd8dd',
-//   greenBlue: '#6AC800',
-// }
 
 const anOldHope = {
   blue: '#4fb4d8',
@@ -38,7 +29,7 @@ const anOldHope = {
   orange: '#ef7c2a',
   red: '#eb3d54',
   yellow: '#e5cd52',
-  background: '#101010',
+  background: '#1c1d21',
   comment: '#686b78',
   foreground: '#cbcdd2',
   selection: '#2F3137',
@@ -47,50 +38,38 @@ const anOldHope = {
 
 const colors = [
   {
-    name: 'background',
-    hex: anOldHope.background,
-    isBackground: true,
-    newHex: '#353333',
-  },
-  {
     name: 'foreground',
     hex: anOldHope.foreground,
-    newHex: '#f8f8f8',
   },
   {
     name: 'color 1',
     key: 'color1',
     hex: anOldHope.blue,
-    isSecondaryOption: true,
-    newHex: homer.yellow,
   },
   {
     name: 'color 2',
     key: 'color2',
     hex: anOldHope.red,
-    isSecondaryOption: true,
-    newHex: homer.pink,
   },
   {
     name: 'color 3',
     key: 'color3',
     hex: anOldHope.green,
-    isSecondaryOption: true,
-    newHex: homer.beige,
   },
   {
     name: 'color 4',
     key: 'color4',
     hex: anOldHope.yellow,
-    isSecondaryOption: true,
-    newHex: homer.lightBlue,
   },
   {
     name: 'color 5',
     key: 'color5',
     hex: anOldHope.orange,
-    isSecondaryOption: true,
-    newHex: homer.greenBlue,
+  },
+  {
+    name: 'background',
+    hex: anOldHope.background,
+    isBackground: true,
   },
   {
     name: 'comment',
@@ -103,36 +82,11 @@ const colors = [
   {
     name: 'selection',
     hex: anOldHope.selection,
-    newHex: '#52525A',
   },
-]
-
-const secondary = [
-  {
-    name: 'Added',
-    key: 'added',
-  },
-  {
-    name: 'Deleted',
-    key: 'deleted',
-  },
-  {
-    name: 'Modified',
-    key: 'modified',
-  },
-  {
-    name: 'Error',
-    key: 'error',
-  },
-  {
-    name: 'Warning',
-    key: 'warning',
-  }
 ]
 
 const palette = {
   colors,
-  secondary,
   list: [...Object.values(homer)],
   add: action((state, hex) => {
     if (!state.list.includes(hex)) {
@@ -144,12 +98,8 @@ const palette = {
   }),
   setColor: action((state, { hex, name }) => {
     const found = state.colors.find(color => color.name === name)
-    found.newHex = hex
-  }),
-  setSecondaryColor: action((state, { hex, key }) => {
-    const found = state.secondary.find(color => color.key === key)
-    found.newHex = hex
+    found.hex = hex
   }),
 }
 
-export default palette
+export default palette`

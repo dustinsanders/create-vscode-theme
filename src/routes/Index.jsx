@@ -10,6 +10,7 @@ import Step from '@material-ui/core/Step'
 import StepButton from '@material-ui/core/StepButton'
 import Stepper from '@material-ui/core/Stepper'
 import ToolBar from '../components/Toolbar'
+import Secondary from '../components/Secondary'
 import Foreground from '../components/Foreground'
 import Palette from '../components/Palette'
 
@@ -36,34 +37,35 @@ const steps =[
     component: Palette,
   },
   {
-    title: 'Foreground',
-    component: Foreground,
+    title: 'Secondary',
+    component: Secondary,
   },
-  {
-    title: 'Background',
-    component: Background,
-  },
-  {
-    title: 'Terminal',
-    component: () => <div>Terminal</div>,
-  },
-  {
-    title: 'Git',
-    component: () => <div>Git</div>,
-  },
+  // {
+  //   title: 'Background',
+  //   component: Background,
+  // },
+  // {
+  //   title: 'Terminal',
+  //   component: () => <div>Terminal</div>,
+  // },
+  // {
+  //   title: 'Git',
+  //   component: () => <div>Git</div>,
+  // },
 ]
 
 const Index = () => {
   const classes = useStyles()
   const [activeStep, setActiveStep] = useState(0)
   const { payload, replacements } = useStoreState(state => state.upload)
+  const palette = useStoreState(state => state.palette)
   const Content = steps[activeStep].component
 
   return (
     <Container className={classes.root}>
       <Paper elevation={3} className={classes.toolbarContainer}>
         <ToolBar />
-        <Button color="primary" onClick={() => copyToClipboard(payload, replacements)}>
+        <Button color="primary" onClick={() => copyToClipboard(palette)}>
           Copy Theme
         </Button>
       </Paper>
