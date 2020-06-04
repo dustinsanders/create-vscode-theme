@@ -95,7 +95,7 @@ const colors = [
   {
     name: 'comment',
     hex: anOldHope.comment,
-    newHex: '#8D92A0',
+    newHex: '#969BA7',
     description: 'Foreground color for commented out code and inactive tabs'
   },
   {

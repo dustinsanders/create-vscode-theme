@@ -9,10 +9,10 @@ import Paper from '@material-ui/core/Paper'
 import Step from '@material-ui/core/Step'
 import StepButton from '@material-ui/core/StepButton'
 import Stepper from '@material-ui/core/Stepper'
-import ToolBar from '../components/Toolbar'
-import Secondary from '../components/Secondary'
-import Foreground from '../components/Foreground'
 import Palette from '../components/Palette'
+import Secondary from '../components/Secondary'
+import TinyColor from '../components/TinyColor'
+import ToolBar from '../components/Toolbar'
 
 const useStyles = makeStyles({
   root: {
@@ -40,18 +40,6 @@ const steps =[
     title: 'Secondary',
     component: Secondary,
   },
-  // {
-  //   title: 'Background',
-  //   component: Background,
-  // },
-  // {
-  //   title: 'Terminal',
-  //   component: () => <div>Terminal</div>,
-  // },
-  // {
-  //   title: 'Git',
-  //   component: () => <div>Git</div>,
-  // },
 ]
 
 const Index = () => {
