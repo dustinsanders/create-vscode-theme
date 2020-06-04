@@ -93,7 +93,7 @@ const getColor = ({
   'editorCursor.foreground': color1,
   'editor.selectionBackground': selection,
   'editor.selectionHighlightBackground': shadeColor(selection, 5),
-  'editor.inactiveSelectionBackground': shadeColor(selection, -10),
+  'editor.inactiveSelectionBackground': shadeColor(selection, -5),
   'editor.wordHighlightBackground': selection,
   'editor.wordHighlightStrongBackground': selection,
   'editor.findMatchBackground': selection,
