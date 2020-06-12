@@ -1,32 +1,13 @@
-import Button from '@material-ui/core/Button'
 import ColorSquare from './ColorSquare'
-import React, { useState } from 'react'
+import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import { ChromePicker } from 'react-color'
 import { useStoreActions, useStoreState } from 'easy-peasy'
-import code from './code'
 import { makeStyles } from '@material-ui/core'
-import getTokenColors from '../helpers/getTokenColors'
-
-const anOldHope = {
-  color1: '#4fb4d8',
-  color3: '#78bd65',
-  color5: '#ef7c2a',
-  color2: '#eb3d54',
-  color4: '#e5cd52',
-  background: '#1c1d21',
-  comment: '#686b78',
-  foreground: '#cbcdd2',
-  selection: '#2F3137',
-  secondary: '#3f4044',
-}
-
-const test = getTokenColors(anOldHope)
 
 const useStyles = makeStyles({
   color: {
     display: 'flex',
-    // flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
@@ -46,9 +27,8 @@ const useStyles = makeStyles({
 })
 
 const Palette = () => {
-  const [hex, setHex] = useState('')
   const { colors } = useStoreState(state => state.palette)
-  const { add, setColor } = useStoreActions(store => store.palette)
+  const { setColor } = useStoreActions(store => store.palette)
   const classes = useStyles()
   const found = colors.find(entry => entry.isBackground)
   const backgroundColor = found.newHex || found.hex

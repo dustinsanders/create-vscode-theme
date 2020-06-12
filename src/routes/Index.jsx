@@ -1,8 +1,8 @@
 import { useStoreState } from 'easy-peasy'
 import { makeStyles } from '@material-ui/core/styles'
+import { copyToClipboard as oldCopyToClipboard } from '../old/createTheme'
 import { copyToClipboard } from '../helpers/createTheme'
 import React, { useState } from 'react'
-import Background from '../components/Background'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
@@ -11,10 +11,7 @@ import StepButton from '@material-ui/core/StepButton'
 import Stepper from '@material-ui/core/Stepper'
 import Palette from '../components/Palette'
 import Secondary from '../components/Secondary'
-import TinyColor from '../components/TinyColor'
 import ToolBar from '../components/Toolbar'
-
-import createTheme2, { copyToClipboard as copyToClipboard2 } from '../helpers/createTheme2'
 
 const useStyles = makeStyles({
   root: {
@@ -51,7 +48,6 @@ const steps =[
 const Index = () => {
   const classes = useStyles()
   const [activeStep, setActiveStep] = useState(0)
-  const { payload, replacements } = useStoreState(state => state.upload)
   const palette = useStoreState(state => state.palette)
   const Content = steps[activeStep].component
 
@@ -59,10 +55,10 @@ const Index = () => {
     <Container className={classes.root}>
       <Paper elevation={3} className={classes.toolbarContainer}>
         <ToolBar />
-        <Button color="primary" onClick={() => copyToClipboard(palette)}>
+        <Button color="primary" onClick={() => oldCopyToClipboard()}>
           Copy Theme
         </Button>
-        <Button color="primary" onClick={() => copyToClipboard2(palette)}>
+        <Button color="primary" onClick={() => copyToClipboard(palette)}>
           Copy Theme 2
         </Button>
       </Paper>
