@@ -1,0 +1,147 @@
+{
+  "colors": [
+    {
+      "name": "background",
+      "hex": "#2D2C2C",
+      "isBackground": true,
+      "description": "Editor Background Color",
+      "derivatives": {
+        "#272626": "darken(2.5)",
+        "#474545": "lighten(10)",
+        "#615e5e": "lighten(20)",
+        "#7a7878": "lighten(30)"
+      }
+    },
+    {
+      "name": "foreground",
+      "hex": "#f8f8f8",
+      "isForeground": true,
+      "description": "Editor Foreground Color"
+    },
+    {
+      "name": "Color 1 - Strings",
+      "hex": "#FED90F",
+      "isSecondaryOption": true,
+      "description": "Yellow Color in Homer Theme",
+      "derivatives": {
+        "#fff1a7": "lighten(30)"
+      }
+    },
+    {
+      "name": "Color 2",
+      "hex": "#FF419E",
+      "isSecondaryOption": true,
+      "description": "Pink Color in Homer Theme"
+    },
+    {
+      "name": "Color 3",
+      "hex": "#D1B271",
+      "isSecondaryOption": true,
+      "description": "Beige Color in Homer Theme"
+    },
+    {
+      "name": "Color 4",
+      "hex": "#70D1FE",
+      "isSecondaryOption": true,
+      "description": "Light Blue Color in Homer Theme"
+    },
+    {
+      "name": "Color 5",
+      "hex": "#cef296",
+      "isSecondaryOption": true,
+      "description": "Green Color in Homer Theme"
+    },
+    {
+      "name": "Selection",
+      "hex": "#494950",
+      "description": "Main Selection Color",
+      "derivatives": {
+        "#49495075": "opacity(75)",
+        "#55555d": "lighten(5)",
+        "#3d3d43": "darken(5)"
+      }
+    },
+    {
+      "name": "Comment",
+      "hex": "#969BA7",
+      "description": "Comment Foreground Color",
+      "derivatives": {
+        "#969BA775": "opacity(75)"
+      }
+    }
+  ],
+  "secondary": [
+    {
+      "name": "Added",
+      "hex": "#cef296",
+      "colors": [
+        "editorOverviewRuler.addedForeground",
+        "editorGutter.addedBackground",
+        "gitDecoration.addedResourceForeground",
+        "gitDecoration.untrackedResourceForeground",
+        "diffEditor.insertedTextBackground",
+        "diffEditor.insertedTextBorder"
+      ],
+      "derivatives": {
+        "#cef29625": "opacity(25)"
+      }
+    },
+    {
+      "name": "Deleted/Error",
+      "hex": "#FF419E",
+      "colors": [
+        "editorOverviewRuler.deletedForeground",
+        "editorGutter.deletedBackground",
+        "diffEditor.removedTextBackground",
+        "diffEditor.removedTextBorder",
+        "gitDecoration.deletedResourceForeground",
+        "errorForeground",
+        "inputValidation.errorBackground",
+        "inputValidation.errorBorder",
+        "list.errorForeground",
+        "editorOverviewRuler.errorForeground",
+        "editorError.foreground",
+        "editorMarkerNavigationError.background",
+        "notification.errorBackground"
+      ],
+      "derivatives": {
+        "#FF419E25": "opacity(25)"
+      }
+    },
+    {
+      "name": "Modified",
+      "hex": "#70D1FE",
+      "colors": [
+        "editorOverviewRuler.modifiedForeground",
+        "editorGutter.modifiedBackground",
+        "gitDecoration.modifiedResourceForeground"
+      ]
+    },
+    {
+      "name": "Warning",
+      "key": "warning",
+      "hex": "#D1B271",
+      "colors": [
+        "list.warningForeground",
+        "inputValidation.warningBackground",
+        "inputValidation.warningBorder",
+        "editorOverviewRuler.warningForeground",
+        "editorWarning.foreground",
+        "editorMarkerNavigationWarning.background",
+        "notification.warningBackground"
+      ]
+    },
+    {
+      "name": "Find Highlight",
+      "hex": "#D1B271",
+      "colors": [
+        "editor.findMatchHighlightBackground"
+      ],
+      "derivatives": {
+        "#D1B27175": "opacity(75)"
+      }
+    }
+  ],
+  "terminal": {},
+  "overrides": {}
+}

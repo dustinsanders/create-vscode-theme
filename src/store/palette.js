@@ -1,4 +1,5 @@
 import { action } from 'easy-peasy'
+import meta from '../presets/homer.meta.json'
 
 const darkPlus = {
   purple: '#C586C0',
@@ -50,7 +51,7 @@ const colors = [
     name: 'background',
     hex: anOldHope.background,
     isBackground: true,
-    newHex: '#353333',
+    newHex: '#2D2C2C',
   },
   {
     name: 'foreground',
@@ -140,13 +141,20 @@ const secondary = [
     key: 'warning',
     hex: anOldHope.green,
     newHex: homer.beige,
+  },
+  {
+    name: 'findHighlight',
+    key: 'findHighlight',
+    hex: anOldHope.beige,
+    newHex: homer.beige
   }
 ]
 
 const palette = {
-  colors,
-  secondary,
-  list: [...Object.values(homer)],
+  colors: meta.colors,
+  secondary: meta.secondary,
+  colors1: colors,
+  secondary1: secondary,
   add: action((state, hex) => {
     if (!state.list.includes(hex)) {
       state.list.push(hex)
@@ -159,8 +167,8 @@ const palette = {
     const found = state.colors.find(color => color.name === name)
     found.newHex = hex
   }),
-  setSecondaryColor: action((state, { hex, key }) => {
-    const found = state.secondary.find(color => color.key === key)
+  setSecondaryColor: action((state, { hex, name }) => {
+    const found = state.secondary.find(color => color.name === name)
     found.newHex = hex
   }),
 }

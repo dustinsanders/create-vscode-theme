@@ -10,12 +10,6 @@ export default ({
 }) => [
   {
     'name': 'Comment',
-    'settings': {
-      'foreground': foreground
-    }
-  },
-  {
-    'name': 'Comment',
     'scope': 'comment',
     'settings': {
       'foreground': comment

@@ -14,6 +14,8 @@ import Secondary from '../components/Secondary'
 import TinyColor from '../components/TinyColor'
 import ToolBar from '../components/Toolbar'
 
+import createTheme2, { copyToClipboard as copyToClipboard2 } from '../helpers/createTheme2'
+
 const useStyles = makeStyles({
   root: {
     display: 'flex',
@@ -40,6 +42,10 @@ const steps =[
     title: 'Secondary',
     component: Secondary,
   },
+  {
+    title: 'Terminal',
+    component: () => "Terminal",
+  }
 ]
 
 const Index = () => {
@@ -55,6 +61,9 @@ const Index = () => {
         <ToolBar />
         <Button color="primary" onClick={() => copyToClipboard(palette)}>
           Copy Theme
+        </Button>
+        <Button color="primary" onClick={() => copyToClipboard2(palette)}>
+          Copy Theme 2
         </Button>
       </Paper>
       <Stepper nonLinear activeStep={activeStep}>

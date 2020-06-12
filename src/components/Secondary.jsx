@@ -14,12 +14,12 @@ const Secondary = () => {
     <div>
       {
         secondary.map(entry => (
-          <div key={entry.key}>
+          <div key={entry.name}>
             <Typography>{entry.name}</Typography>
             <CirclePicker
               colors={options}
               onChange={newColor =>
-                setSecondaryColor({ hex: newColor.hex, key: entry.key })
+                setSecondaryColor({ hex: newColor.hex, name: entry.name })
               }
               color={entry.newHex || ''}
             />

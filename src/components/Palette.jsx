@@ -33,7 +33,8 @@ const useStyles = makeStyles({
   },
   name: {
     display: 'flex',
-    flex: 1
+    flexDirection: 'column',
+    flex: 1,
   },
   colorPicker: {
     display: 'flex',
@@ -46,7 +47,7 @@ const useStyles = makeStyles({
 
 const Palette = () => {
   const [hex, setHex] = useState('')
-  const { colors, list } = useStoreState(state => state.palette)
+  const { colors } = useStoreState(state => state.palette)
   const { add, setColor } = useStoreActions(store => store.palette)
   const classes = useStyles()
   const found = colors.find(entry => entry.isBackground)
@@ -60,6 +61,11 @@ const Palette = () => {
             <div className={classes.name}>
               <Typography variant="h4">
                 {color.name}
+              </Typography>
+              <br />
+              <br />
+              <Typography>
+                <i>{color.description}</i>
               </Typography>
             </div>
             <div className={classes.colorPicker}>
