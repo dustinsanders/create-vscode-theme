@@ -1,9 +1,14 @@
 import { action } from 'easy-peasy'
 import meta from '../presets/homer.meta.json'
 
+const addNewValue = list => list.map(entry => ({
+  ...entry,
+  newValue: entry.value,
+}))
+
 const palette = {
-  colors: meta.colors,
-  secondary: meta.secondary,
+  colors: addNewValue(meta.colors),
+  secondary: addNewValue(meta.secondary),
   add: action((state, hex) => {
     if (!state.list.includes(hex)) {
       state.list.push(hex)
@@ -12,13 +17,13 @@ const palette = {
   remove: action((state, codeToRemove) => {
     state.list = state.filter(colorCode => colorCode !== codeToRemove)
   }),
-  setColor: action((state, { hex, name }) => {
+  setColor: action((state, { newValue, name }) => {
     const found = state.colors.find(color => color.name === name)
-    found.newHex = hex
+    found.newValue = newValue
   }),
-  setSecondaryColor: action((state, { hex, name }) => {
+  setSecondaryColor: action((state, { newValue, name }) => {
     const found = state.secondary.find(color => color.name === name)
-    found.newHex = hex
+    found.newValue = newValue
   }),
 }
 

@@ -1,4 +1,4 @@
-const getValue = ({ hex, newHex }) =>
-  newHex || hex
+const getValue = entry =>
+  entry.newValue || entry.value
 
 export default getValue

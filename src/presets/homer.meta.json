@@ -2,7 +2,7 @@
   "colors": [
     {
       "name": "Background",
-      "hex": "#2D2C2C",
+      "value": "#2D2C2C",
       "isBackground": true,
       "description": "Primary Background Color",
       "derivatives1": {
@@ -13,32 +13,32 @@
       },
       "derivatives": [
         {
-          "hex": "#272626",
+          "value": "#272626",
           "derivation": "darken(2.5)"
         },
         {
-          "hex": "#474545",
+          "value": "#474545",
           "derivation": "lighten(10)"
         },
         {
-          "hex": "#615e5e",
+          "value": "#615e5e",
           "derivation": "lighten(20)"
         },
         {
-          "hex": "#7a7878",
+          "value": "#7a7878",
           "derivation": "lighten(30)"
         }
       ]
     },
     {
       "name": "Foreground",
-      "hex": "#f8f8f8",
+      "value": "#f8f8f8",
       "isForeground": true,
       "description": "Primary Foreground Color"
     },
     {
       "name": "Color 1 - Strings",
-      "hex": "#FED90F",
+      "value": "#FED90F",
       "isSecondaryOption": true,
       "description": "Yellow Color in Homer Theme",
       "derivatives1": {
@@ -46,38 +46,38 @@
       },
       "derivatives": [
         {
-          "hex": "#fff1a7",
+          "value": "#fff1a7",
           "derivation": "lighten(30)"
         }
       ]
     },
     {
       "name": "Color 2",
-      "hex": "#FF419E",
+      "value": "#FF419E",
       "isSecondaryOption": true,
       "description": "Pink Color in Homer Theme"
     },
     {
       "name": "Color 3",
-      "hex": "#D1B271",
+      "value": "#D1B271",
       "isSecondaryOption": true,
       "description": "Beige Color in Homer Theme"
     },
     {
       "name": "Color 4",
-      "hex": "#70D1FE",
+      "value": "#70D1FE",
       "isSecondaryOption": true,
       "description": "Light Blue Color in Homer Theme"
     },
     {
       "name": "Color 5",
-      "hex": "#cef296",
+      "value": "#cef296",
       "isSecondaryOption": true,
       "description": "Green Color in Homer Theme"
     },
     {
       "name": "Selection",
-      "hex": "#494950",
+      "value": "#494950",
       "description": "Main Selection Color",
       "derivatives1": {
         "#49495075": "opacity(75)",
@@ -86,29 +86,29 @@
       },
       "derivatives": [
         {
-          "hex": "#49495075",
+          "value": "#49495075",
           "derivation": "opacity(75)"
         },
         {
-          "hex": "#55555d",
+          "value": "#55555d",
           "derivation": "lighten(5)"
         },
         {
-          "hex": "#3d3d43",
+          "value": "#3d3d43",
           "derivation": "darken(5)"
         }
       ]
     },
     {
       "name": "Comment",
-      "hex": "#969BA7",
+      "value": "#969BA7",
       "description": "Comment Foreground Color",
       "derivatives1": {
         "#969BA775": "opacity(75)"
       },
       "derivatives": [
         {
-          "hex": "#969BA775",
+          "value": "#969BA775",
           "derivation": "opacity(75)"
         }
       ]
@@ -117,7 +117,7 @@
   "secondary": [
     {
       "name": "Added",
-      "hex": "#cef296",
+      "value": "#cef296",
       "colors": [
         "editorOverviewRuler.addedForeground",
         "editorGutter.addedBackground",
@@ -131,14 +131,14 @@
       },
       "derivatives": [
         {
-          "hex": "#cef29625",
+          "value": "#cef29625",
           "derivation": "opacity(25)"
         }
       ]
     },
     {
       "name": "Deleted/Error",
-      "hex": "#FF419E",
+      "value": "#FF419E",
       "colors": [
         "editorOverviewRuler.deletedForeground",
         "editorGutter.deletedBackground",
@@ -159,14 +159,14 @@
       },
       "derivatives": [
         {
-          "hex": "#FF419E25",
+          "value": "#FF419E25",
           "derivation": "opacity(25)"
         }
       ]
     },
     {
       "name": "Modified",
-      "hex": "#70D1FE",
+      "value": "#70D1FE",
       "colors": [
         "editorOverviewRuler.modifiedForeground",
         "editorGutter.modifiedBackground",
@@ -176,7 +176,7 @@
     {
       "name": "Warning",
       "key": "warning",
-      "hex": "#D1B271",
+      "value": "#D1B271",
       "colors": [
         "list.warningForeground",
         "inputValidation.warningBackground",
@@ -189,7 +189,7 @@
     },
     {
       "name": "Find Highlight",
-      "hex": "#D1B271",
+      "value": "#D1B271",
       "colors": [
         "editor.findMatchHighlightBackground"
       ],
@@ -198,14 +198,14 @@
       },
       "derivatives": [
         {
-          "hex": "#D1B27175",
+          "value": "#D1B27175",
           "derivation": "opacity(75)"
         }
       ]
     },
     {
       "name": "Terminal Red",
-      "hex": "#FF419E",
+      "value": "#FF419E",
       "colors": [
         "terminal.ansiRed",
         "terminal.ansiMagenta",
@@ -215,7 +215,7 @@
     },
     {
       "name": "Terminal Blue",
-      "hex": "#FED90F",
+      "value": "#FED90F",
       "colors": [
         "terminal.ansiBlue",
         "terminal.ansiCyan",
@@ -225,7 +225,7 @@
     },
     {
       "name": "Terminal Green",
-      "hex": "#D1B271",
+      "value": "#D1B271",
       "colors": [
         "terminal.green",
         "terminal.ansiBrightGreen"
@@ -233,7 +233,7 @@
     },
     {
       "name": "Terminal Yellow",
-      "hex": "70D1FE",
+      "value": "70D1FE",
       "colors": [
         "terminal.yellow",
         "terminal.ansiBrightYellow"

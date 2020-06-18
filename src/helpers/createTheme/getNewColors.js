@@ -41,7 +41,7 @@ const getColor = (meta, key, oldHex) => {
     )
   }
 
-    const found = meta.colors.find(entry => isEqualColor(entry.hex, oldHex))
+  const found = meta.colors.find(entry => isEqualColor(getValue(entry), oldHex))
 
   if (found) {
     return getValue(found)

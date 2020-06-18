@@ -25,7 +25,7 @@ const Secondary = () => {
   const options = useMemo(
     () => colors
       .filter(entry => entry.isSecondaryOption)
-      .map(entry => entry.newHex || entry.hex),
+      .map(entry => entry.newValue),
     [colors],
   )
 
@@ -38,7 +38,7 @@ const Secondary = () => {
             <CirclePicker
               colors={options}
               onChange={newColor =>
-                setSecondaryColor({ hex: newColor.hex, name: color.name })
+                setSecondaryColor({ newValue: newColor.hex, name: color.name })
               }
               color={color.newHex || ''}
             />

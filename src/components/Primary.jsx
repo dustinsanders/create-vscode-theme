@@ -29,7 +29,7 @@ const Primary = () => {
   const { setColor } = useStoreActions(store => store.palette)
   const classes = useStyles()
   const found = colors.find(entry => entry.isBackground)
-  const backgroundColor = found.newHex || found.hex
+  const backgroundColor = found.newValue
 
   return (
     <div>
@@ -42,16 +42,16 @@ const Primary = () => {
             <div className={classes.picker}>
               <ChromePicker
                 disableAlpha
-                color={color.newHex || color.hex}
+                color={color.newValue}
                 onChange={newColor =>
-                  setColor({ hex: newColor.hex, name: color.name })
+                  setColor({ newValue: newColor.hex, name: color.name })
                 }
               />
             </div>
             <div className={classes.square}>
               <ColorSquare
                 backgroundColor={backgroundColor}
-                hex={color.newHex || color.hex}
+                hex={color.newValue}
               />
             </div>
           </div>
