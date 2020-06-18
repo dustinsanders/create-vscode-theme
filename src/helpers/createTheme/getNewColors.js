@@ -23,7 +23,7 @@ const getColor = (meta, key, oldValue) => {
     return foundSecondary.newValue
   }
 
-  const foundDerivativeParent = meta.colors.find(({ derivatives }) => {
+  const foundDerivativeParent = meta.primary.find(({ derivatives }) => {
     if (!derivatives) {
       return false
     }
@@ -40,7 +40,7 @@ const getColor = (meta, key, oldValue) => {
     )
   }
 
-  const found = meta.colors.find(entry => isEqualColor(entry.value, oldValue))
+  const found = meta.primary.find(entry => isEqualColor(entry.value, oldValue))
 
   if (found) {
     return found.newValue

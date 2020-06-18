@@ -3,7 +3,7 @@ import { findEqualColorInList } from './isEqualColor'
 const getSettings = (meta, settings) =>{
   const entries = Object.entries(settings)
   const cleaned = entries.map(([key, oldValue]) => {
-    const found = findEqualColorInList(oldValue, meta.colors)
+    const found = findEqualColorInList(oldValue, meta.primary)
 
     if (found) {
       return [key, found.newValue]

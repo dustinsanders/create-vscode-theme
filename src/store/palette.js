@@ -7,7 +7,7 @@ const addNewValue = list => list.map(entry => ({
 }))
 
 const palette = {
-  colors: addNewValue(meta.colors),
+  primary: addNewValue(meta.primary),
   secondary: addNewValue(meta.secondary),
   add: action((state, hex) => {
     if (!state.list.includes(hex)) {
@@ -18,7 +18,7 @@ const palette = {
     state.list = state.filter(colorCode => colorCode !== codeToRemove)
   }),
   setColor: action((state, { newValue, name }) => {
-    const found = state.colors.find(color => color.name === name)
+    const found = state.primary.find(color => color.name === name)
     found.newValue = newValue
   }),
   setSecondaryColor: action((state, { newValue, name }) => {

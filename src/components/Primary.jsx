@@ -25,16 +25,16 @@ const useStyles = makeStyles({
 })
 
 const Primary = () => {
-  const { colors } = useStoreState(state => state.palette)
+  const { primary } = useStoreState(state => state.palette)
   const { setColor } = useStoreActions(store => store.palette)
   const classes = useStyles()
-  const found = colors.find(entry => entry.isBackground)
+  const found = primary.find(entry => entry.isBackground)
   const backgroundColor = found.newValue
 
   return (
     <div>
       {
-        colors.map(color => (
+        primary.map(color => (
           <div key={color.name} className={classes.color}>
             <div className={classes.name}>
               <Name color={color} />

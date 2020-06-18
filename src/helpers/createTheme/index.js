@@ -1,15 +1,7 @@
-import tinycolor from 'tinycolor2'
 import theme from '../../presets/homer.json'
 import { diff } from 'deep-object-diff'
 import getNewColors from './getNewColors'
 import getNewTokenColors from './getNewTokenColors'
-
-const areColorsTheSame = (color1, color2) => {
-  const [colorString1, colorString2] = [color1, color2]
-    .map(color => tinycolor(color).toHex8String())
-
-  return colorString1 === colorString2
-}
 
 const {
   colors: oldColors,
