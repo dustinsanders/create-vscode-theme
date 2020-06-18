@@ -2,30 +2,24 @@
   "primary": [
     {
       "name": "Background",
-      "value": "#2D2C2C",
+      "value": "#353434",
       "isBackground": true,
       "description": "Primary Background Color",
-      "derivatives1": {
-        "#272626": "darken(2.5)",
-        "#474545": "lighten(10)",
-        "#615e5e": "lighten(20)",
-        "#7a7878": "lighten(30)"
-      },
       "derivatives": [
         {
-          "value": "#272626",
+          "value": "#2f2e2e",
           "derivation": "darken(2.5)"
         },
         {
-          "value": "#474545",
+          "value": "#4f4d4d",
           "derivation": "lighten(10)"
         },
         {
-          "value": "#615e5e",
+          "value": "#686666",
           "derivation": "lighten(20)"
         },
         {
-          "value": "#7a7878",
+          "value": "#828080",
           "derivation": "lighten(30)"
         }
       ]
@@ -41,9 +35,6 @@
       "value": "#FED90F",
       "isSecondaryOption": true,
       "description": "Yellow Color in Homer Theme",
-      "derivatives1": {
-        "#fff1a7": "lighten(30)"
-      },
       "derivatives": [
         {
           "value": "#fff1a7",
@@ -79,11 +70,6 @@
       "name": "Selection",
       "value": "#494950",
       "description": "Main Selection Color",
-      "derivatives1": {
-        "#49495075": "opacity(75)",
-        "#55555d": "lighten(5)",
-        "#3d3d43": "darken(5)"
-      },
       "derivatives": [
         {
           "value": "#49495075",
@@ -103,9 +89,6 @@
       "name": "Comment",
       "value": "#969BA7",
       "description": "Comment Foreground Color",
-      "derivatives1": {
-        "#969BA775": "opacity(75)"
-      },
       "derivatives": [
         {
           "value": "#969BA775",
@@ -126,9 +109,6 @@
         "diffEditor.insertedTextBackground",
         "diffEditor.insertedTextBorder"
       ],
-      "derivatives1": {
-        "#cef29625": "opacity(25)"
-      },
       "derivatives": [
         {
           "value": "#cef29625",
@@ -154,9 +134,6 @@
         "editorMarkerNavigationError.background",
         "notification.errorBackground"
       ],
-      "derivatives1": {
-        "#FF419E25": "opacity(25)"
-      },
       "derivatives": [
         {
           "value": "#FF419E25",
@@ -193,9 +170,6 @@
       "colors": [
         "editor.findMatchHighlightBackground"
       ],
-      "derivatives1": {
-        "#D1B27175": "opacity(75)"
-      },
       "derivatives": [
         {
           "value": "#D1B27175",
