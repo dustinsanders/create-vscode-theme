@@ -1,4 +1,3 @@
-import getValue from './getValue'
 import { findEqualColorInList } from './isEqualColor'
 
 const getSettings = (meta, settings) =>{
@@ -7,9 +6,7 @@ const getSettings = (meta, settings) =>{
     const found = findEqualColorInList(oldValue, meta.colors)
 
     if (found) {
-      const newValue = getValue(found)
-
-      return [key, newValue]
+      return [key, found.newValue]
     }
 
     return [key, oldValue]
