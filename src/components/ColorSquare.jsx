@@ -4,8 +4,8 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   root: {
-    height: 200,
-    width: 200,
+    height: 250,
+    width: 250,
     padding: 48,
   },
   color: {
@@ -35,7 +35,6 @@ const ColorSquare = ({
       style={{
         backgroundColor,
       }}
-      elevation={5}
       onClick={onClick}
       square
     >

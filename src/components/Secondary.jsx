@@ -1,27 +1,46 @@
-import React from 'react'
-import Typography from '@material-ui/core/Typography'
+import React, { useMemo } from 'react'
 import { CirclePicker } from 'react-color'
+import { makeStyles } from '@material-ui/core/styles'
 import { useStoreActions, useStoreState } from 'easy-peasy'
+import Name from './Name'
+
+const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+  },
+  color: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    margin: '24px 0',
+  },
+})
 
 const Secondary = () => {
   const { setSecondaryColor } = useStoreActions(store => store.palette)
   const { colors, secondary } = useStoreState(state => state.palette)
-  const options = colors
-    .filter(entry => entry.isSecondaryOption)
-    .map(entry => entry.newHex || entry.hex)
+  const classes = useStyles()
+  const options = useMemo(
+    () => colors
+      .filter(entry => entry.isSecondaryOption)
+      .map(entry => entry.newHex || entry.hex),
+    [colors],
+  )
 
   return (
-    <div>
+    <div className={classes.root}>
       {
-        secondary.map(entry => (
-          <div key={entry.name}>
-            <Typography>{entry.name}</Typography>
+        secondary.map(color => (
+          <div key={color.name} className={classes.color}>
+            <Name color={color} />
             <CirclePicker
               colors={options}
               onChange={newColor =>
-                setSecondaryColor({ hex: newColor.hex, name: entry.name })
+                setSecondaryColor({ hex: newColor.hex, name: color.name })
               }
-              color={entry.newHex || ''}
+              color={color.newHex || ''}
             />
           </div>
         ))

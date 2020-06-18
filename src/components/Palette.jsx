@@ -4,25 +4,24 @@ import Typography from '@material-ui/core/Typography'
 import { ChromePicker } from 'react-color'
 import { useStoreActions, useStoreState } from 'easy-peasy'
 import { makeStyles } from '@material-ui/core'
+import Name from './Name'
 
 const useStyles = makeStyles({
   color: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-  name: {
-    display: 'flex',
-    flexDirection: 'column',
     flex: 1,
-  },
-  colorPicker: {
-    display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-    flex: 2,
+    '& >div': {
+      display: 'flex',
+      flex: 1,
+    }
+  },
+  picker: {
+    justifyContent: 'center',
+  },
+  square: {
+    justifyContent: 'flex-end',
   },
 })
 
@@ -39,25 +38,18 @@ const Palette = () => {
         colors.map(color => (
           <div key={color.name} className={classes.color}>
             <div className={classes.name}>
-              <Typography variant="h4">
-                {color.name}
-              </Typography>
-              <br />
-              <br />
-              <Typography>
-                <i>{color.description}</i>
-              </Typography>
+              <Name color={color} />
             </div>
-            <div className={classes.colorPicker}>
-              <div>
-                <ChromePicker
-                  disableAlpha
-                  color={color.newHex || color.hex}
-                  onChange={newColor =>
-                    setColor({ hex: newColor.hex, name: color.name })
-                  }
-                />
-              </div>
+            <div className={classes.picker}>
+              <ChromePicker
+                disableAlpha
+                color={color.newHex || color.hex}
+                onChange={newColor =>
+                  setColor({ hex: newColor.hex, name: color.name })
+                }
+              />
+            </div>
+            <div className={classes.square}>
               <ColorSquare
                 backgroundColor={backgroundColor}
                 hex={color.newHex || color.hex}

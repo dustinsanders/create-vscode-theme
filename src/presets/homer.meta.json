@@ -1,31 +1,55 @@
 {
   "colors": [
     {
-      "name": "background",
+      "name": "Background",
       "hex": "#2D2C2C",
       "isBackground": true,
-      "description": "Editor Background Color",
-      "derivatives": {
+      "description": "Primary Background Color",
+      "derivatives1": {
         "#272626": "darken(2.5)",
         "#474545": "lighten(10)",
         "#615e5e": "lighten(20)",
         "#7a7878": "lighten(30)"
-      }
+      },
+      "derivatives": [
+        {
+          "hex": "#272626",
+          "derivation": "darken(2.5)"
+        },
+        {
+          "hex": "#474545",
+          "derivation": "lighten(10)"
+        },
+        {
+          "hex": "#615e5e",
+          "derivation": "lighten(20)"
+        },
+        {
+          "hex": "#7a7878",
+          "derivation": "lighten(30)"
+        }
+      ]
     },
     {
-      "name": "foreground",
+      "name": "Foreground",
       "hex": "#f8f8f8",
       "isForeground": true,
-      "description": "Editor Foreground Color"
+      "description": "Primary Foreground Color"
     },
     {
       "name": "Color 1 - Strings",
       "hex": "#FED90F",
       "isSecondaryOption": true,
       "description": "Yellow Color in Homer Theme",
-      "derivatives": {
+      "derivatives1": {
         "#fff1a7": "lighten(30)"
-      }
+      },
+      "derivatives": [
+        {
+          "hex": "#fff1a7",
+          "derivation": "lighten(30)"
+        }
+      ]
     },
     {
       "name": "Color 2",
@@ -55,19 +79,39 @@
       "name": "Selection",
       "hex": "#494950",
       "description": "Main Selection Color",
-      "derivatives": {
+      "derivatives1": {
         "#49495075": "opacity(75)",
         "#55555d": "lighten(5)",
         "#3d3d43": "darken(5)"
-      }
+      },
+      "derivatives": [
+        {
+          "hex": "#49495075",
+          "derivation": "opacity(75)"
+        },
+        {
+          "hex": "#55555d",
+          "derivation": "lighten(5)"
+        },
+        {
+          "hex": "#3d3d43",
+          "derivation": "darken(5)"
+        }
+      ]
     },
     {
       "name": "Comment",
       "hex": "#969BA7",
       "description": "Comment Foreground Color",
-      "derivatives": {
+      "derivatives1": {
         "#969BA775": "opacity(75)"
-      }
+      },
+      "derivatives": [
+        {
+          "hex": "#969BA775",
+          "derivation": "opacity(75)"
+        }
+      ]
     }
   ],
   "secondary": [
@@ -82,9 +126,15 @@
         "diffEditor.insertedTextBackground",
         "diffEditor.insertedTextBorder"
       ],
-      "derivatives": {
+      "derivatives1": {
         "#cef29625": "opacity(25)"
-      }
+      },
+      "derivatives": [
+        {
+          "hex": "#cef29625",
+          "derivation": "opacity(25)"
+        }
+      ]
     },
     {
       "name": "Deleted/Error",
@@ -104,9 +154,15 @@
         "editorMarkerNavigationError.background",
         "notification.errorBackground"
       ],
-      "derivatives": {
+      "derivatives1": {
         "#FF419E25": "opacity(25)"
-      }
+      },
+      "derivatives": [
+        {
+          "hex": "#FF419E25",
+          "derivation": "opacity(25)"
+        }
+      ]
     },
     {
       "name": "Modified",
@@ -137,11 +193,51 @@
       "colors": [
         "editor.findMatchHighlightBackground"
       ],
-      "derivatives": {
+      "derivatives1": {
         "#D1B27175": "opacity(75)"
-      }
+      },
+      "derivatives": [
+        {
+          "hex": "#D1B27175",
+          "derivation": "opacity(75)"
+        }
+      ]
+    },
+    {
+      "name": "Terminal Red",
+      "hex": "#FF419E",
+      "colors": [
+        "terminal.ansiRed",
+        "terminal.ansiMagenta",
+        "terminal.ansiBrightRed",
+        "terminal.ansiBrightMagenta"
+      ]
+    },
+    {
+      "name": "Terminal Blue",
+      "hex": "#FED90F",
+      "colors": [
+        "terminal.ansiBlue",
+        "terminal.ansiCyan",
+        "terminal.ansiBrightBlue",
+        "terminal.ansiBrightCyan"
+      ]
+    },
+    {
+      "name": "Terminal Green",
+      "hex": "#D1B271",
+      "colors": [
+        "terminal.green",
+        "terminal.ansiBrightGreen"
+      ]
+    },
+    {
+      "name": "Terminal Yellow",
+      "hex": "70D1FE",
+      "colors": [
+        "terminal.yellow",
+        "terminal.ansiBrightYellow"
+      ]
     }
-  ],
-  "terminal": {},
-  "overrides": {}
+  ]
 }
