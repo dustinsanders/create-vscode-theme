@@ -1,6 +1,5 @@
 import ColorSquare from './ColorSquare'
 import React from 'react'
-import Typography from '@material-ui/core/Typography'
 import { ChromePicker } from 'react-color'
 import { useStoreActions, useStoreState } from 'easy-peasy'
 import { makeStyles } from '@material-ui/core'
@@ -25,7 +24,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Palette = () => {
+const Primary = () => {
   const { colors } = useStoreState(state => state.palette)
   const { setColor } = useStoreActions(store => store.palette)
   const classes = useStyles()
@@ -62,4 +61,4 @@ const Palette = () => {
   )
 }
 
-export default Palette
+export default Primary

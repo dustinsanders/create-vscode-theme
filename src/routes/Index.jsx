@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper'
 import Step from '@material-ui/core/Step'
 import StepButton from '@material-ui/core/StepButton'
 import Stepper from '@material-ui/core/Stepper'
-import Palette from '../components/Palette'
+import Primary from '../components/Primary'
 import Secondary from '../components/Secondary'
 import Theme from '../components/Theme'
 
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 const steps =[
   {
     title: 'Primary',
-    Content: Palette,
+    Content: Primary,
   },
   {
     title: 'Secondary',
