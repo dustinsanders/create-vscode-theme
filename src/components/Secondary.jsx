@@ -20,13 +20,13 @@ const useStyles = makeStyles({
 
 const Secondary = () => {
   const { setSecondaryColor } = useStoreActions(store => store.palette)
-  const { colors, secondary } = useStoreState(state => state.palette)
+  const { primary, secondary } = useStoreState(state => state.palette)
   const classes = useStyles()
   const options = useMemo(
-    () => colors
+    () => primary
       .filter(entry => entry.isSecondaryOption)
       .map(entry => entry.newValue),
-    [colors],
+    [primary],
   )
 
   return (
