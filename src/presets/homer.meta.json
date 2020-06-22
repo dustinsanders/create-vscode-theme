@@ -101,6 +101,7 @@
     {
       "name": "Added",
       "value": "#cef296",
+      "description": "GIT added resource color",
       "colors": [
         "editorOverviewRuler.addedForeground",
         "editorGutter.addedBackground",
@@ -119,6 +120,7 @@
     {
       "name": "Deleted/Error",
       "value": "#FF419E",
+      "description": "GIT deleted resource and general error color",
       "colors": [
         "editorOverviewRuler.deletedForeground",
         "editorGutter.deletedBackground",
@@ -144,6 +146,7 @@
     {
       "name": "Modified",
       "value": "#70D1FE",
+      "description": "GIT modified resource color",
       "colors": [
         "editorOverviewRuler.modifiedForeground",
         "editorGutter.modifiedBackground",
@@ -154,6 +157,7 @@
       "name": "Warning",
       "key": "warning",
       "value": "#D1B271",
+      "description": "general warning color",
       "colors": [
         "list.warningForeground",
         "inputValidation.warningBackground",
@@ -167,6 +171,7 @@
     {
       "name": "Find Highlight",
       "value": "#D1B271",
+      "description": "background color for matches on find",
       "colors": [
         "editor.findMatchHighlightBackground"
       ],
@@ -180,37 +185,55 @@
     {
       "name": "Terminal Red",
       "value": "#FF419E",
+      "description": "red/error color in integrated terminal",
       "colors": [
         "terminal.ansiRed",
-        "terminal.ansiMagenta",
-        "terminal.ansiBrightRed",
-        "terminal.ansiBrightMagenta"
-      ]
-    },
-    {
-      "name": "Terminal Blue",
-      "value": "#FED90F",
-      "colors": [
-        "terminal.ansiBlue",
-        "terminal.ansiCyan",
-        "terminal.ansiBrightBlue",
-        "terminal.ansiBrightCyan"
+        "terminal.ansiBrightRed"
       ]
     },
     {
       "name": "Terminal Green",
-      "value": "#D1B271",
+      "value": "#cef296",
+      "description": "green/success color in integrated terminal",
       "colors": [
-        "terminal.green",
+        "terminal.ansiGreen",
         "terminal.ansiBrightGreen"
       ]
     },
     {
+      "name": "Terminal Blue",
+      "value": "#70d1fe",
+      "description": "blue color in integrated terminal",
+      "colors": [
+        "terminal.ansiBlue",
+        "terminal.ansiBrightBlue"
+      ]
+    },
+    {
       "name": "Terminal Yellow",
-      "value": "70D1FE",
+      "value": "#FED90F",
+      "description": "yellow color in integrated terminal",
       "colors": [
         "terminal.yellow",
         "terminal.ansiBrightYellow"
+      ]
+    },
+    {
+      "name": "Terminal Magenta",
+      "value": "#FF419E",
+      "description": "magenta color in integrated terminal",
+      "colors": [
+        "terminal.ansiMagenta",
+        "terminal.ansiBrightMagenta"
+      ]
+    },
+    {
+      "name": "Terminal Cyan",
+      "value": "#d1b271",
+      "description": "cyan color in integrated terminal",
+      "colors": [
+        "terminal.ansiCyan",
+        "terminal.ansiBrightCyan"
       ]
     }
   ]

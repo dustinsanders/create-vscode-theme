@@ -1,6 +1,6 @@
 import get from 'lodash/get'
 import createDerivative from './createDerivative'
-import isEqualColor, { findEqualColorInList } from './isEqualColor'
+import isEqualColor, { findEqualColorInList } from '../isEqualColor'
 
 const getColor = (meta, key, oldValue) => {
   if (oldValue === null) {

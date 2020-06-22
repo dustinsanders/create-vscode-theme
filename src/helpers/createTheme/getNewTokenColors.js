@@ -1,4 +1,4 @@
-import { findEqualColorInList } from './isEqualColor'
+import { findEqualColorInList } from '../isEqualColor'
 
 const getSettings = (meta, settings) =>{
   const entries = Object.entries(settings)
