@@ -1,19 +1,17 @@
-import theme from '../../presets/homer.json'
 import { diff } from 'deep-object-diff'
 import getNewColors from './getNewColors'
 import getNewTokenColors from './getNewTokenColors'
 
-const {
-  colors: oldColors,
-  tokenColors: oldTokenColors,
-} = theme
-
 const createTheme = palette => {
+  const {
+    colors: oldColors,
+    tokenColors: oldTokenColors,
+  } = palette.theme
   const newColors = getNewColors(palette, oldColors)
   const newTokenColors = getNewTokenColors(palette, oldTokenColors)
 
   const newTheme = {
-    ...theme,
+    ...palette.theme,
     colors: newColors,
     tokenColors: newTokenColors,
   }

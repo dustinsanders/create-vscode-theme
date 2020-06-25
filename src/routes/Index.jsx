@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles'
-import React, { useState } from 'react'
-import AppBar from '../components/AppBar'
+import { useStoreActions, useStoreState } from 'easy-peasy'
+import React, { useEffect, useState } from 'react'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import Container from '@material-ui/core/Container'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import Paper from '@material-ui/core/Paper'
 import Step from '@material-ui/core/Step'
 import StepButton from '@material-ui/core/StepButton'
@@ -30,6 +30,11 @@ const useStyles = makeStyles({
     overflowY: 'scroll',
     height: '100%',
   },
+  loaderContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: 64,
+  },
 })
 
 const steps =[
@@ -50,30 +55,43 @@ const steps =[
 const Index = () => {
   const classes = useStyles()
   const [activeStep, setActiveStep] = useState(0)
+  const { isInitialized } = useStoreState(state => state.palette)
+  const { fetchTheme } = useStoreActions(store => store.palette)
+
+  useEffect(() => {
+    fetchTheme()
+  }, [])
+
+  if (!isInitialized) {
+    return (
+      <div className={classes.loaderContainer}>
+        <CircularProgress />
+      </div>
+    )
+  }
+
+
   const { Content } = steps[activeStep]
 
+
   return (
-    <>
-      <AppBar />
-      <CssBaseline />
-      <Container className={classes.root}>
-        <Paper elevation={3}>
-          <Stepper nonLinear activeStep={activeStep}>
-            {steps.map((step, idx) => (
-              <Step key={step.title}>
-                <StepButton onClick={() => setActiveStep(idx)} completed={false}>
-                  {step.title}
-                </StepButton>
-              </Step>
-            ))}
-          </Stepper>
-        </Paper>
-        <br />
-        <Paper className={classes.contentContainer} elevation={3}>
-          <Content />
-        </Paper>
-      </Container>
-    </>
+    <Container className={classes.root}>
+      <Paper elevation={3}>
+        <Stepper nonLinear activeStep={activeStep}>
+          {steps.map((step, idx) => (
+            <Step key={step.title}>
+              <StepButton onClick={() => setActiveStep(idx)} completed={false}>
+                {step.title}
+              </StepButton>
+            </Step>
+          ))}
+        </Stepper>
+      </Paper>
+      <br />
+      <Paper className={classes.contentContainer} elevation={3}>
+        <Content />
+      </Paper>
+    </Container>
   )
 }
 
