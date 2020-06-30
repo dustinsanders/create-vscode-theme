@@ -1,4 +1,5 @@
 import IconButton from '@material-ui/core/IconButton'
+import Link from '@material-ui/core/Link'
 import MuiAppBar from '@material-ui/core/AppBar'
 import React, { useState } from 'react'
 import Settings from '@material-ui/icons/Settings'
@@ -22,7 +23,13 @@ const AppBar = () => {
     <MuiAppBar position="static">
       <Toolbar className={classes.root}>
         <Typography variant="h6">
-          create-vscode-theme
+          <Link
+            href="https://github.com/dustinsanders/create-vscode-theme"
+            target="_blank"
+            color="inherit"
+          >
+            create-vscode-theme
+          </Link>
         </Typography>
         <IconButton color="inherit" onClick={() => setOpen(true)}>
           <Settings />
