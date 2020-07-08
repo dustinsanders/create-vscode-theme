@@ -1,4 +1,3 @@
-import { diff } from 'deep-object-diff'
 import getNewColors from './getNewColors'
 import getNewTokenColors from './getNewTokenColors'
 

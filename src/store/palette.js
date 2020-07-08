@@ -1,7 +1,8 @@
-import { action, thunk } from 'easy-peasy'
+import { computed, action, thunk } from 'easy-peasy'
 import presetMeta from '../presets/homer.meta.json'
 import presetTheme from '../presets/homer.json'
 import getGitHubUrls from '../helpers/getGitHubUrls'
+import validateMeta from '../helpers/validateMeta'
 
 const addNewValue = list => list.map(entry => ({
   ...entry,
@@ -55,6 +56,7 @@ const palette = {
       initialize({ theme: presetTheme, meta: presetMeta })
     }
   }),
+  themeDiff: computed(state => state.isInitialized && validateMeta(state)),
 }
 
 export default palette
