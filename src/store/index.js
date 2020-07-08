@@ -1,8 +1,8 @@
 import { createStore } from 'easy-peasy'
-import upload from './upload'
+import palette from './palette'
 
 const store = createStore({
-  upload,
+  palette,
 })
 
 export default store
