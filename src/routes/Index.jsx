@@ -56,10 +56,10 @@ const tabs =[
     title: 'View Theme JSON',
     Content: Theme,
   },
-  {
-    title: 'View Meta JSON',
-    Content: Meta,
-  },
+  // {
+  //   title: 'View Meta JSON',
+  //   Content: Meta,
+  // },
   {
     title: 'Download Project Zip',
     Content: DownloadZip,
