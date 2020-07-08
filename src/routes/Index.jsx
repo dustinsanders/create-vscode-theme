@@ -68,7 +68,7 @@ const tabs =[
 
 const Index = () => {
   const classes = useStyles()
-  const [activeStep, setActiveStep] = useState(3)
+  const [activeStep, setActiveStep] = useState(0)
   const { isInitialized } = useStoreState(state => state.palette)
   const { fetchTheme } = useStoreActions(store => store.palette)
 
