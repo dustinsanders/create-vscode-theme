@@ -74,7 +74,7 @@ const Index = () => {
 
   useEffect(() => {
     fetchTheme()
-  }, [])
+  }, [fetchTheme])
 
   if (!isInitialized) {
     return (
